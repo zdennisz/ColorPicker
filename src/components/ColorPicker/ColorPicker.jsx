@@ -40,14 +40,14 @@ const ColorPicker = () => {
 		drawInitialColors();
 	}, [hslColorValues, drawInitialColors]);
 	return (
-		<form className='color_picker_container' onSubmit={changeColor}>
+		<form className='color-picker-container' onSubmit={changeColor}>
 			<canvas
 				width={404}
 				height={404}
 				ref={canvasRef}
-				className='canvas_style'
+				className='canvas-style'
 				onClick={captureColorValue}
-			></canvas>
+			/>
 			<Preview
 				hue={hslColorValues.hue}
 				saturation={hslColorValues.sat}
