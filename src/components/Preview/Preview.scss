@@ -1,0 +1,23 @@
+.preview-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.preview-color{
+    width: 100px;
+    height: 46px;
+    margin: 13px 12px 21px 6px;
+    border: solid 1px #000;
+    background-color: var(--blurple);
+}
+
+.preview-text-box{
+    width: 292px;
+    height: 46px;
+    margin: 13px 10px 21px 12px;
+    padding: 5px 57px 6px 10px;
+    border: solid 1px #000;
+    background-color: #fff;
+}

@@ -1,0 +1,15 @@
+@import "./theme.scss";
+.app-background {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 1440px;
+	height: 1024px;
+	background-image: radial-gradient(
+		circle at 100% 0,
+		$indigo,
+		#220045 99%
+	);
+	padding: 197px 146px 197px 160px;
+
+}
