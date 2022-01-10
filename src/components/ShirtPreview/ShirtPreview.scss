@@ -7,5 +7,21 @@
     margin: 0 0 0 27px;
     box-shadow: inset 28px 28px 6px 0 rgba(0, 0, 0, 0.4);
     border: solid 27px #d8d8d8;
+    position: relative;
+    background-image: url("../../assets/checkerboard.svg");
+}
 
+
+.background-container{
+    position: absolute;
+    z-index: 1;
+}
+.shirt-container{
+    position: absolute;
+    z-index: 2;
+}
+
+.really-good-container{
+    position: absolute;
+    z-index: 3;
 }
