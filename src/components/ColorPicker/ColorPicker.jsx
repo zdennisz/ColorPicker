@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useCallback } from "react";
 import Preview from "./../Preview/Preview";
 import Button from "./../Button/Button";
 import "./ColorPicker.scss";
@@ -25,10 +25,20 @@ const ColorPicker = () => {
 			light: 1 - light / rect.height,
 		}));
 	};
+	const drawInitialColors = useCallback(() => {
+		let ctx = canvasRef.current.getContext("2d");
+		let rect = canvasRef.current.getBoundingClientRect();
+		for (let i = 0; i < rect.width / 8; i++) {
+			for (let j = 0; j < rect.height / 8; j++) {
+				ctx.fillStyle = `hsl(${hslColorValues.hue},${i}%,${100 - j}%)`;
+				ctx.fillRect(i * 4, j * 4, 4, 4);
+			}
+		}
+	}, [hslColorValues]);
 
 	useEffect(() => {
-		console.log("hsl values", hslColorValues);
-	}, [hslColorValues]);
+		drawInitialColors();
+	}, [hslColorValues, drawInitialColors]);
 	return (
 		<form className='color_picker_container' onSubmit={changeColor}>
 			<canvas
