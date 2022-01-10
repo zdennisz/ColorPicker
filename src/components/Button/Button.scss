@@ -1,3 +1,28 @@
-button{
+.button-preview{
+    width: 420px;
+    height: 102px;
+    text-transform: lowercase;
+    box-sizing: border-box;
+    width: 100%;
+    box-shadow: 0 0 0 6px rgb(255,255,255),
+    0 0 0 12px rgb(59,12,93);
+    border-radius:8px;
+    padding: 5px;
+    color: white;
+    font-size: xxx-large;
+    text-shadow: 1px 2px 3px #000;
+    background-image:linear-gradient(rgb(43,38,156),rgb(117,84,171));
+ &::first-letter{
+    text-transform: capitalize;
     
+ }
+ &::before, &::after{
+    content: '⬢';
+    
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+}
+

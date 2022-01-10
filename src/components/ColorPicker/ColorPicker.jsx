@@ -63,6 +63,7 @@ const ColorPicker = ({ updateHSLColor }) => {
 				saturation={hslColorValues.sat}
 				lightness={hslColorValues.light}
 			/>
+
 			<Button />
 		</form>
 	);
