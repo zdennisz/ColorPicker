@@ -3,7 +3,7 @@ import Preview from "./../Preview/Preview";
 import Button from "./../Button/Button";
 import "./ColorPicker.scss";
 
-const ColorPicker = () => {
+const ColorPicker = ({ updateHSLColor }) => {
 	const canvasRef = useRef(null);
 	const [hslColorValues, setHslColorValues] = useState({
 		hue: 260,
@@ -11,10 +11,17 @@ const ColorPicker = () => {
 		light: 0.6,
 	});
 
-	const changeColor = (e) => {
-		e.preventDeafult();
-		console.log("submit was clicked");
-	};
+	const changeColor = useCallback(
+		(e) => {
+			e.preventDefault();
+			updateHSLColor(
+				hslColorValues.hue,
+				hslColorValues.sat,
+				hslColorValues.light
+			);
+		},
+		[hslColorValues, updateHSLColor]
+	);
 	const captureColorValue = (e) => {
 		let rect = canvasRef.current.getBoundingClientRect();
 		let sat = e.clientX - rect.left;
@@ -25,7 +32,8 @@ const ColorPicker = () => {
 			light: 1 - light / rect.height,
 		}));
 	};
-	const drawInitialColors = useCallback(() => {
+
+	const paintCanvasWithInitColors = useCallback(() => {
 		let ctx = canvasRef.current.getContext("2d");
 		let rect = canvasRef.current.getBoundingClientRect();
 		for (let i = 0; i < rect.width / 4; i++) {
@@ -37,8 +45,10 @@ const ColorPicker = () => {
 	}, [hslColorValues]);
 
 	useEffect(() => {
-		drawInitialColors();
-	}, [hslColorValues, drawInitialColors]);
+		paintCanvasWithInitColors();
+	}, [hslColorValues, paintCanvasWithInitColors, changeColor]);
+
+	useEffect(() => {}, []);
 	return (
 		<form className='color-picker-container' onSubmit={changeColor}>
 			<canvas
