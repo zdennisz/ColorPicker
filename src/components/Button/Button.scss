@@ -11,18 +11,22 @@
     color: white;
     font-size: xxx-large;
     text-shadow: 1px 2px 3px #000;
+    cursor: pointer;
     background-image:linear-gradient(rgb(43,38,156),rgb(117,84,171));
  &::first-letter{
     text-transform: capitalize;
-    
  }
- &::before, &::after{
+
+ &::before{
     content: '⬢';
-    
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin:-8px 0 0 -92px;
+    position: absolute;
+}
+
+ &::after{
+    content: '⬢';
+    margin: -8px 0 0 56px;
+    position: absolute;
 }
 }
 
