@@ -1,13 +1,12 @@
 .canvas-style {
 	width: 404px;
 	height: 404px;
-	margin: 27px 27px 27px 27px;
   background-color: white;
 }
 
 .color-picker-container{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
 	width: 458px;

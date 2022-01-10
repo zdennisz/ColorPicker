@@ -14,7 +14,7 @@ const Preview = ({ hue, saturation, lightness }) => {
 			<input
 				className='preview-text-box'
 				readOnly
-				value={`hsl(${hue},${Math.floor(saturation * 100)}%,${Math.floor(
+				value={`hsl(${hue}, ${Math.floor(saturation * 100)}%, ${Math.floor(
 					lightness * 100
 				)}%)`}
 			></input>
