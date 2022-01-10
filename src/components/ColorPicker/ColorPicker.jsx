@@ -28,8 +28,8 @@ const ColorPicker = () => {
 	const drawInitialColors = useCallback(() => {
 		let ctx = canvasRef.current.getContext("2d");
 		let rect = canvasRef.current.getBoundingClientRect();
-		for (let i = 0; i < rect.width / 8; i++) {
-			for (let j = 0; j < rect.height / 8; j++) {
+		for (let i = 0; i < rect.width / 4; i++) {
+			for (let j = 0; j < rect.height / 4; j++) {
 				ctx.fillStyle = `hsl(${hslColorValues.hue},${i}%,${100 - j}%)`;
 				ctx.fillRect(i * 4, j * 4, 4, 4);
 			}
