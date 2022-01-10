@@ -1,18 +1,23 @@
 import React from "react";
 import "./Preview.scss";
 const Preview = ({ hue, saturation, lightness }) => {
-	console.log("math", Math.floor(saturation * 100));
 	return (
 		<div className='preview-container'>
 			<div
 				className='preview-color'
 				style={{
-					color: `hsl(${hue},${Math.floor(saturation * 100)}%,${Math.floor(
-						lightness
-					)}%)`,
+					backgroundColor: `hsl(${hue},${Math.floor(
+						saturation * 100
+					)}%,${Math.floor(lightness * 100)}%)`,
 				}}
 			></div>
-			<input className='preview-text-box' readOnly></input>
+			<input
+				className='preview-text-box'
+				readOnly
+				value={`hsl(${hue},${Math.floor(saturation * 100)}%,${Math.floor(
+					lightness * 100
+				)}%)`}
+			></input>
 		</div>
 	);
 };
