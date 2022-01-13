@@ -4,12 +4,12 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 1440px;
-	height: 1024px;
+	width: 100vw;
+	height:100vh;
 	background-image: radial-gradient(
 		circle at 100% 0,
 		$indigo,
 		#220045 99%
 	);
-	padding: 197px 146px 197px 160px;
+	
 }
