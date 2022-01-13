@@ -18,10 +18,10 @@ const ShirtPreview = ({ previewShirtColor }) => {
 				<Background />
 			</div>
 			<div className='shirt-container'>
-				<Shirt width={466} height={439} />
+				<Shirt width={555} height={555} />
 			</div>
-			<div className='really-good-container'>
-				<LogoSvg width={"122"} height={"139"} fill={checkParams()} />
+			<div className='logo-container'>
+				<LogoSvg width={"220"} height={"220"} fill={checkParams()} />
 			</div>
 		</div>
 	);
